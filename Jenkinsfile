@@ -9,8 +9,8 @@ pipeline {
             steps {
                 echo "Started installing package..."
                 sh "npm install"
-                sh "chmod +x ${env.WORKSPACE}/jenkins/scripts/build.sh"
-                sh './jenkins/scripts/build.sh'
+                sh "npm install -g pm2"
+                sh 'npm run build'
             }
         }
         stage("Test") {
